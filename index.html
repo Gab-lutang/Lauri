@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#FF69B4">
+    <title>Our Love Story 🧸💝🌷</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="teddy-favicon.svg">
+    <link rel="alternate icon" type="image/png" href="teddy-favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="teddy-bear.ico">
+    <link rel="apple-touch-icon" href="teddy-bear.png">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="birthday-title">Happy Birthday Babi!</h1>
+            <h1 class="love-story-title">Our Love Story 🧸💝🌷</h1>
+            <p class="subtitle">Sweet memories with my teddy bear 🎀</p>
+
+        </div>
+
+        <div class="navigation">
+            <button class="nav-button" onclick="toggleView('grid')">Photo Grid</button>
+            <button class="nav-button" onclick="toggleView('slideshow')">Slideshow</button>
+            <button class="nav-button" onclick="toggleHearts()">Toggle Hearts</button>
+        </div>
+
+        <div class="counter-container">
+            <div class="counter-item">
+                Celebrating <span id="days-together" class="counter-number">0</span> days of love
+            </div>
+            <div class="counter-item">
+                Creating <span id="photo-count" class="counter-number">0</span> beautiful memories
+            </div>
+        </div>
+
+        <div class="slideshow-container" id="slideshow">
+            <div class="slide-controls">
+                <button class="slide-control-button" onclick="prevSlide()">❮</button>
+                <button class="slide-control-button" onclick="nextSlide()">❯</button>
+            </div>
+        </div>
+
+        <div class="photo-grid" id="photo-grid">
+            <!-- Photo cards will be added by JavaScript -->
+        </div>
+    </div>
+
+    <div class="background-hearts" id="hearts-container"></div>
+
+    <div class="photo-modal">
+        <span class="close-modal" onclick="closeModal()">×</span>
+        <img class="modal-content" src="" alt="Enlarged photo">
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

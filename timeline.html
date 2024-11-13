@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Timeline 💝</title>
+    <link rel="stylesheet" href="timeline.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Header -->
+        <header class="main-header">
+            <h1 class="title">Our Love Story Timeline 💑</h1>
+            <div class="view-controls">
+                <button class="view-btn active" data-view="timeline">Timeline</button>
+                <button class="view-btn" data-view="grid">Photo Grid</button>
+                <button class="view-btn" data-view="slideshow">Slideshow</button>
+            </div>
+        </header>
+
+        <!-- Timeline View -->
+        <div class="timeline-container" id="timeline-view">
+            <div class="timeline-line"></div>
+            <div class="timeline-events" id="timeline-events">
+                <!-- Timeline events will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Photo Grid View -->
+        <div class="photo-grid hidden" id="grid-view">
+            <!-- Photos will be populated by JavaScript -->
+        </div>
+
+        <!-- Slideshow View -->
+        <div class="slideshow-container hidden" id="slideshow-view">
+            <div class="slides-wrapper">
+                <!-- Slides will be populated by JavaScript -->
+            </div>
+            <button class="slide-control prev" aria-label="Previous slide">❮</button>
+            <button class="slide-control next" aria-label="Next slide">❯</button>
+        </div>
+
+        <!-- Memory Details Modal -->
+        <div class="memory-modal" id="memory-modal" aria-modal="true" role="dialog">
+            <div class="modal-content">
+                <span class="close-modal" aria-label="Close modal">&times;</span>
+                <div class="memory-details">
+                    <img class="modal-image" src="" alt="Memory">
+                    <div class="memory-info">
+                        <h3 class="memory-title"></h3>
+                        <p class="memory-date"></p>
+                        <p class="memory-description"></p>
+                        <div class="memory-tags"></div>
+                    </div>
+                </div>
+                <div class="memory-actions">
+                    <button class="action-btn edit-memory" aria-label="Edit memory">Edit ✏️</button>
+                    <button class="action-btn add-note" aria-label="Add note">Add Note 💌</button>
+                    <button class="action-btn share-memory" aria-label="Share memory">Share 💝</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Memory Button -->
+        <button class="floating-add-btn" id="add-memory-btn" aria-label="Add new memory">
+            Add New Memory
+        </button>
+    </div>
+    <script src="timeline.js"></script>
+</body>
+</html> 
