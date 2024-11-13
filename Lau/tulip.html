@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Tulips Garden</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffe5ec;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+
+        .garden {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            align-items: flex-end;
+            transform-style: preserve-3d;
+        }
+
+        .tulip {
+            position: relative;
+            transform-style: preserve-3d;
+            animation: sway 6s ease-in-out infinite;
+        }
+
+        .flower {
+            position: relative;
+            width: 80px;
+            height: 100px;
+            transform-style: preserve-3d;
+        }
+
+        .petal {
+            position: absolute;
+            width: 25px;
+            height: 70px;
+            background: linear-gradient(to right, #ffb6c1, #ff69b4);
+            border-radius: 50% 50% 25% 25%;
+            transform-origin: bottom center;
+            box-shadow: 
+                inset -3px 3px 10px rgba(255, 255, 255, 0.5),
+                inset 3px -3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .petal::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            border-radius: inherit;
+            filter: brightness(1.1);
+            transform: scale(0.95);
+        }
+
+        .petal:nth-child(1) { 
+            transform: translateZ(5px) rotateY(-35deg) rotateX(-20deg);
+            left: 5px;
+        }
+        .petal:nth-child(2) { 
+            transform: translateZ(2px) rotateY(-15deg) rotateX(-15deg);
+            left: 20px;
+        }
+        .petal:nth-child(3) { 
+            transform: translateZ(0) rotateY(0deg) rotateX(-10deg);
+            left: 27px;
+        }
+        .petal:nth-child(4) { 
+            transform: translateZ(2px) rotateY(15deg) rotateX(-15deg);
+            left: 35px;
+        }
+        .petal:nth-child(5) { 
+            transform: translateZ(5px) rotateY(35deg) rotateX(-20deg);
+            left: 50px;
+        }
+
+        .inner-petal {
+            position: absolute;
+            width: 20px;
+            height: 65px;
+            background: linear-gradient(to right, #ff69b4, #ff1493);
+            border-radius: 50% 50% 25% 25%;
+            left: 30px;
+            transform: translateZ(8px) rotateX(-25deg) scale(0.9);
+            box-shadow: 
+                inset -2px 2px 8px rgba(255, 255, 255, 0.4),
+                inset 2px -2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .stem {
+            width: 4px;
+            height: 140px;
+            background: linear-gradient(to right, #228B22, #32CD32);
+            position: absolute;
+            bottom: -140px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .leaf {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(45deg, #228B22, #32CD32);
+            border-radius: 100% 0;
+        }
+
+        .leaf.left {
+            transform: rotate(-30deg);
+            left: -35px;
+            top: 50px;
+        }
+
+        .leaf.right {
+            transform: rotate(150deg);
+            right: -35px;
+            top: 80px;
+        }
+
+        .butterfly {
+            position: absolute;
+            font-size: 24px;
+            animation: flutter 15s infinite linear;
+        }
+
+        .butterfly::before,
+        .butterfly::after {
+            content: '🦋';
+            position: absolute;
+            font-size: 24px;
+            animation: wingBeat 0.2s infinite alternate;
+        }
+
+        .message {
+            position: absolute;
+            bottom: 50px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 32px;
+            color: #ff1493;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 30px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(-2deg) rotateX(-5deg); }
+            50% { transform: rotate(2deg) rotateX(-2deg); }
+        }
+
+        @keyframes flutter {
+            0% { transform: translate(-50vw, 20vh) rotate(10deg); }
+            50% { transform: translate(50vw, -20vh) rotate(-10deg); }
+            100% { transform: translate(-50vw, 20vh) rotate(10deg); }
+        }
+
+        @keyframes wingBeat {
+            0% { transform: scaleX(1); }
+            100% { transform: scaleX(0.8); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="garden">
+        <div class="tulip">
+            <div class="flower">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="inner-petal"></div>
+            </div>
+            <div class="stem">
+                <div class="leaf left"></div>
+                <div class="leaf right"></div>
+            </div>
+        </div>
+        <div class="tulip">
+            <div class="flower">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="inner-petal"></div>
+            </div>
+            <div class="stem">
+                <div class="leaf left"></div>
+                <div class="leaf right"></div>
+            </div>
+        </div>
+        <div class="tulip">
+            <div class="flower">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="inner-petal"></div>
+            </div>
+            <div class="stem">
+                <div class="leaf left"></div>
+                <div class="leaf right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="butterfly">🦋</div>
+    <div class="message">✨ Pink Tulips for You ✨</div>
+</body>
+</html> 

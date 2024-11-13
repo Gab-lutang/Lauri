@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Teddy Body -->
+    <circle cx="50" cy="50" r="40" fill="#F4D03F"/>
+    <!-- Ears -->
+    <circle cx="25" cy="25" r="12" fill="#F4D03F"/>
+    <circle cx="75" cy="25" r="12" fill="#F4D03F"/>
+    <!-- Inner Ears -->
+    <circle cx="25" cy="25" r="6" fill="#FFF"/>
+    <circle cx="75" cy="25" r="6" fill="#FFF"/>
+    <!-- Eyes -->
+    <circle cx="40" cy="45" r="4" fill="#2C3E50"/>
+    <circle cx="60" cy="45" r="4" fill="#2C3E50"/>
+    <!-- Nose -->
+    <circle cx="50" cy="55" r="5" fill="#784212"/>
+    <!-- Bow -->
+    <path d="M40 20 Q50 15 60 20 Q50 25 40 20" fill="#E74C3C"/>
+    <!-- Mini Heart -->
+    <path d="M85 45 Q90 35 95 45 Q100 55 90 65 Q80 55 85 45" fill="#E74C3C"/>
+</svg> 
